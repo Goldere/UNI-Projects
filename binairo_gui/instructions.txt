@@ -1,0 +1,75 @@
+Instructions
+
+Setting up:
+When the program is run, the first thing the users needs to do is to choose
+whether to use input or seed value when creating the board.
+
+If the user wishes to use seed value they must put any number in range 0-50 into the
+seed LineEdit widget. If the seed corresponds a bad seed (seed produces a non-solvable gameboard)
+the game cannot be started.
+
+If the user wishes to create the game layout based on their own input they must
+type it into the input LineEdit widget. The input must be (BoardSize*BoardSize + 2)
+characters long and the first and last characters must be an empty space.
+For example, if the board size is equal to 8 then there must be 66
+characters in the input. Allowed characters in the input are 'C'(circle),
+'T'(triangle) and ' '(empty space). If the input is mistaken, the game cannot be started
+
+User can also set the game board to its desired size by changing
+the value of the const integer NUMBER_OF_SYMBOLS in the file gameboard.hh on line 19.
+
+If the seed value or input is set, user can start the game by
+pressing PLAY-button after which the following happens:
+-The game board becomes visible to the player and gets filled with symbols
+-The game timer starts
+-Reset button is enabled
+-Pause button is enabled(additional feature)
+-Y coordinate LineEdit widget is enabled
+-X coordinate LineEdit widget is enabled
+-Symbol LineEdit widget is enabled
+-Insert button is enabled
+
+Player can add symbols to the game board by giving X & Y coordinates
+and the symbol they wish to add. These can be set by putting the values
+inside the LineEdit Widgets which are shown in the game interface.
+
+Allowed coordinate values are:
+0 - 6(board size)
+
+Allowed symbol values are:
+'C' which is equal to a circle symbol on the game board.
+'T' which is equal to a triangle symbol on the game board.
+
+When these values are set, the user can add the symbol to the game board by pressing
+INSERT-button. If the input of coordinates or symbol is erroneous the game notifies the user
+and the symbol doesn't get added.
+
+The game can be reseted whenever by pressing the RESET-button. This starts the game all over again,
+but the input or seed values cannot be changed.
+
+If the entire board is filled with symbols the game notifies the player.
+Game is won, if the entire board is filled according to the game's rules, otherwise it's lost.
+The game timer stops and the time taken to fill the board is shown to the user.
+
+Additional Features:
+1. Game symbols are implemented as images. We are using triangle 'T' and circle 'C'
+instead of one and zero.
+
+4. The game allows to add symbols that are not following the game rules.
+When this is done, the symbol is added to the board, but its background is red.
+When user adds one symbol to the game board that doesn't follow the game's rules
+the game is automatically lost, but the user can still keep adding these symbols to
+the game board and the game timer keeps updating.
+
+5. Game includes a point system. When the game is started or reseted the points are set to 100.
+The points decrease by 2 everytime 10 seconds have passed so each minute spent in the game
+means losing 10 points. The points are always displayed to the player.
+
+7. The game background changes when the game  ends and changes back when reset button is clicked.
+When the game ends (board is entirely filled with symbols) the background changes based on whether
+the user won or lost. If won, it changes to green and if lost it becomes red. User wins the game
+if she/he only placed symbols that followed the game's rules. If even one symbol is added not within
+the game rules, the game is lost.
+
+8. The game has a pause button. Pressing this puttong disables all the buttons in
+the game and stops the timer. The game can be continued by pressing this button again.
