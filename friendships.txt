@@ -1,0 +1,10 @@
+Anna;James;Florian
+Anna;Brutus
+Anna;Celia;Erin
+Erin;James;Irina;Anna;David
+Celia;David;Anna;Brutus
+David;Erin;Celia
+Kira;Mia;Lucius
+Lucius;Kira;Nina;Mia
+Mia;Kira;Nina;Lucius
+Nina;Lucius;Mia
